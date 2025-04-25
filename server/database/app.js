@@ -17,6 +17,7 @@ mongoose.connect("mongodb://mongo_db:27017/",{'dbName':'dealershipsDB'});
 const Reviews = require('./review');
 
 const Dealerships = require('./dealership');
+const { error } = require('console');
 
 try {
   Reviews.deleteMany({}).then(()=>{
@@ -59,16 +60,38 @@ app.get('/fetchReviews/dealer/:id', async (req, res) => {
 // Express route to fetch all dealerships
 app.get('/fetchDealers', async (req, res) => {
 //Write your code here
+try {
+    const dealers = await Dealerships.find();
+    res.json(dealers)
+} catch (error) {
+    res.status(500).json({ error: 'Error fetching dealerships' });
+}
 });
 
 // Express route to fetch Dealers by a particular state
 app.get('/fetchDealers/:state', async (req, res) => {
 //Write your code here
+try {
+    const dealers = await Dealerships.find({state: req.params.state});
+    res.json(dealers)
+} catch (error) {
+    res.status(500).json({ error: 'Error fetching dealerships by state' });
+
+}
 });
 
 // Express route to fetch dealer by a particular id
 app.get('/fetchDealer/:id', async (req, res) => {
 //Write your code here
+try {
+    const dealerId = parseInt(req.params.id, 10)
+    const dealer = await Dealerships.findOne({ id: dealerId});
+    if(dealer) res.json(dealer)
+    else res.status(404).json({ error: 'Dealer not found'})
+} catch (error) {
+    res.status(500).json({ error: 'Error fetching dealer by id' });
+
+}
 });
 
 //Express route to insert review
