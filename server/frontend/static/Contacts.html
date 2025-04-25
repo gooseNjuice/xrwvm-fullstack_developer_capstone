@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<head>
+<title>Contact Us - Best Cars Dealership</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="bootstrap.min.css">
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 80%;
+      margin: 0 auto;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+      color: darkslategray;
+    }
+    .contact-card {
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 20px 0;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      padding: 20px;
+    }
+    .contact-card img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      margin-right: 20px;
+    }
+    .contact-card .contact-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .contact-card .contact-info p {
+      margin: 5px 0;
+    }
+    .contact-card .contact-info a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    .contact-card .contact-info a:hover {
+      text-decoration: underline;
+    }
+    .contact-header {
+      background-color: darkturquoise;
+      padding: 15px;
+      color: white;
+      border-radius: 10px;
+    }
+    .contact-form {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .contact-form button {
+      background-color: darkturquoise;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .contact-form button:hover {
+      background-color: #20b2aa;
+    }
+  </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkturquoise; height: 1in;">
+        <div class="container-fluid">
+          <h2 style="padding-right: 5%;">Best Cars Dealerships</h2>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" style="font-size: larger;" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="font-size: larger;" href="/about">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" style="font-size: larger;" href="/contact">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <div class="container">
+        <h1>Contact Us</h1>
+
+        <div class="contact-header">
+<h2>Our Team</h2>
+<p>Feel free to reach out to any of our team members. We are here to assist you with any questions you have.</p>
+
+        </div>
+
+<div class="contact-card">
+    <img src="/static/person.png" alt="John Doe">
+    <div class="contact-info">
+      <p><strong>Sarah Smith</strong></p>
+      <p><em>Customer Support</em></p>
+      <p>Need help with financing or have a general inquiry? Reach out to me for assistance.</p>
+      <p>Email: <a href="mailto:sarahsmith@bestcars.com">sarahsmith@bestcars.com</a></p>
+      <p>Phone: <a href="tel:+1234567891">+1 234 567 891</a></p>
+    </div>
+</div>
+
+<div class="contact-card">
+    <img src="/static/person.png" alt="John Doe">
+    <div class="contact-info">
+      <p><strong>John Doe</strong></p>
+      <p><em>Sales Manager</em></p>
+      <p>If you have any questions about our vehicles or services, I am happy to assist you.</p>
+      <p>Email: <a href="mailto:johndoe@bestcars.com">johndoe@bestcars.com</a></p>
+      <p>Phone: <a href="tel:+1234567890">+1 234 567 890</a></p>
+</div>
+
+<div class="contact-form">
+    <h2>Send Us a Message</h2>
+    <form action="/submit_form" method="POST">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Your Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+    </div>
+</body>
+
